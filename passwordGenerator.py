@@ -29,8 +29,10 @@ def main():
         except ValueError:
             print("****************************")
             print("Please enter a valid number.")
-            print("****************************")
+            print("****************************\n")
 
+    print("Your generated password is:")
+    print(generatePassword(int(length)))
 
 if __name__ == "__main__":
     main()
