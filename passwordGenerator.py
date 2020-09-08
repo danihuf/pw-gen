@@ -1,5 +1,6 @@
 import string, random
 import os
+import pyperclip
 
 def generatePassword(num):
     password = ''
@@ -13,6 +14,7 @@ def generatePassword(num):
 # clears the console output
 def clear():
     os.system('clear')
+
 
 def main():
     print("======================")
@@ -32,8 +34,17 @@ def main():
             print("****************************\n")
 
     clear()
+    password = generatePassword(int(length))
     print("Your generated password is:")
-    print(generatePassword(int(length)))
+    print(password)
+    decision = input("Do you want to copy to clipboard? [y/n]")
+    
+    if (decision == 'n'):
+        print("Okay, bye.")
+    else:
+        pyperclip.copy(password)
+        print("Password has been copied to clipboard.")
+
 
 if __name__ == "__main__":
     main()
