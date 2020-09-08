@@ -37,13 +37,24 @@ def main():
     password = generatePassword(int(length))
     print("Your generated password is:")
     print(password)
-    decision = input("Do you want to copy to clipboard? [y/n]")
+    decisionSuccess = False
+    # promts the user to either copy pw to clipboard or not
+    while (not decisionSuccess):
+
+        decision = input("Do you want to copy to clipboard? [y/n]")
     
-    if (decision == 'n'):
-        print("Okay, bye.")
-    else:
-        pyperclip.copy(password)
-        print("Password has been copied to clipboard.")
+        if (decision == 'n' or decision == "no"):
+            print("Okay, bye.")
+            decisionSuccess = True
+    
+        elif(decision == 'y' or decision == "yes"):
+            pyperclip.copy(password)
+            print("Password has been copied to clipboard.")
+            decisionSuccess = True
+
+        else:
+            print("please type either \"y/yes\" or \"n/no\"")
+
 
 
 if __name__ == "__main__":
