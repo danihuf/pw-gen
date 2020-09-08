@@ -2,12 +2,12 @@ import string, random
 import os
 import pyperclip
 
-def generatePassword(num):
+def generatePassword(length):
     password = ''
 
-    for n in range(num):
-        x = random.randint(0, 94)  # all characters excpet \n \t etc
-        password += string.printable[x]
+    for n in range(length):
+        charIndex = random.randint(0, 94)  # all characters excpet \n \t etc
+        password += string.printable[charIndex]
     
     return password
 
