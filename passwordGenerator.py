@@ -31,6 +31,7 @@ def main():
             print("Please enter a valid number.")
             print("****************************\n")
 
+    clear()
     print("Your generated password is:")
     print(generatePassword(int(length)))
 
